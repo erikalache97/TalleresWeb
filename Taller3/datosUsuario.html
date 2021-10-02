@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Usuario</title>
+</head>
+<body>
+    <h1>Rellena tu CV</h1>
+    <form action="">
+        <label for="nombre">Nombre</label><br><input type="text" name="nombre" id=""><br>
+        <label for="aplellido"> Apellidos</label><br><input type="text" name="apellido" id="" style="width: 390px;"><br>
+        <label for="contraseña"> Contraseña</label><br><input type="password" name="contraseña" id=""><br><br>
+        <label for="contraseña"> Confirme contraseña</label><br><input type="password" name="contraseña" id=""><br>
+        <label for="id"> Identificación</label><br>
+        <select name="" id="">
+            <option value="ti">TI</option>
+            <option value="cc">CC</option>
+        </select>
+        <input type="number" name="id" id="" style="width: 95px;">
+        <br>
+        <label for="sexo">Sexo</label><br>
+            <input type="radio" name="" id="">Hombre
+            <input type="radio" name="" id="">Mujer
+        <br><br>
+        <label for="">Incluir mi foto</label><br>
+        <input type="file" name="foto"><br><br>
+        <input type="checkbox" name="estudiante" id=""> Estudiante...
+        <br><br>
+        <div style="margin-left: 15px;"><label style="background-color: white;">Datos personales</label></div> 
+        <div style="border: 1px solid black; width: 400px; height: 230px; margin-left: 1px; padding-left: 15px;
+        padding-top: 18px;margin-top: -8px;margin-bottom: -13px;">
+            <label for="id">Departamento</label><br>
+            <select name="" id="">
+                <option value="">-selecciona-</option>
+                <option value=""></option>
+            </select><br><br>
+            <label for="id">Fecha de nacimiento</label><br>
+            <input type="number" name="" id="" style="width: 60px;"> de 
+            <!-- Meses del año -->
+            <select name="" id="">
+                <option value="">Enero</option>
+                <option value="">Febrero</option>
+                <option value="">Marzo</option>
+                <option value="">Abril</option>
+                <option value="">Mayo</option>
+                <option value="">Junio</option>
+                <option value="">Julio</option>
+                <option value="">Agosto</option>
+                <option value="">Septiembre</option>
+                <option value="">Octubre</option>
+                <option value="">Noviembre</option>
+                <option value="">Diciembre</option>
+            </select> de
+            <input type="number" name="" id="" style="width: 60px;"><br><br>
+            <label for="id">Temas de interes</label><br>
+                <div>
+                    <!-- Temas de interes -->
+                    <select size="5" name="" id="" class="form-control">
+                        <option value="">Administración de bases de datos</option>
+                        <option value="">Analisis y programación</option>
+                        <option value="">Arquitectura</option>
+                        <option value="">Calidad</option>
+                        <option value="">ERP,CRM,Business intelligence</option>
+                        <option value="">otro tema</option>
+                        <option value="">otro tema</option>
+                    </select>
+                </div>
+        </div><br>
+        <input type="button" value="Guardar cambios"> 
+        <input type="reset" value="Borrar los datos introducidos">
+
+    </form>
+</body>
+</html>

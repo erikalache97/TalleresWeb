@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formulario</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="header">
+            <h1>Formulario</h1>
+        </div>
+        <div class="registro">
+            <div class="title">
+                <h2>Registro</h2>
+            </div>
+            <form name="form" class="form" id="formularioRegistro" onsubmit="return validarFormulario();">
+
+                <div class="form-div">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label class="" for="id_usr">Usuario:</label>
+                    <input type="text" id="id_usr" name="id_usr">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="nacimiento" value="2000-01-01" min="1950-01-01" max="2020-07-24">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="telefono">Telefono:</label>
+                    <input type="text" id="telefono">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="ccpaswd">Contraseña:</label>
+                    <input type="password" id="ccpaswd">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="ccpaswd2">Confirmar Contraseña:</label>
+                    <input type="password" id="ccpaswd2">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="residence">Lugar de Residencia</label>
+                    <select name="dptos" id="residence" onchange="loadMunicipios()">
+
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <div class="inv" id="invisible">
+                    <label for="municipios">Municipios</label>
+                    <select name="municipios" id="municipios">
+
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <button class="button" type="submit">Enviar Formulario</button>
+                </div>
+
+            </form>
+            <script src="scripts.js"></script>
+            <script>
+                var requestURL = 'https://www.datos.gov.co/resource/xdk5-pm3f.json';
+                var select = document.getElementById("residence");
+
+                fetch(requestURL)
+                    .then(data => data.json())
+                    .then(data => {
+                        var dpto = data;
+
+                        var dptos = [];
+                        dpto.forEach(item => {
+                            if (dptos.length == 0) {
+                                dptos.push(item.departamento)
+                            } else {
+                                if (!dptos.includes(item.departamento)) {
+                                    dptos.push(item.departamento);
+                                }
+                            }
+
+                        });
+                        if (dptos.length > 0) {
+                            setDepartamentos(dptos)
+                        }
+
+                    })
+
+                function setDepartamentos(dptos) {
+                    var html = '<option value="xxx" selected> </option>';
+                    dptos.forEach(item => {
+                        html += '<option>' + item + '</option>';
+                    });
+                    document.getElementById('residence').innerHTML = html;
+                }
+            </script>
+</body>
+
+</html>

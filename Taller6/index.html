@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#div1").load('https://jsonplaceholder.typicode.com/users');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <title>Formulario 6</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="header">
+            <h1>Formulario</h1>
+        </div>
+        <div class="registro">
+            <div class="title">
+                <h4>Registro</h4>
+            </div>
+            <form name="form" class="form" id="formularioRegistro" onsubmit="return validarFormulario();">
+
+                <div class="form-div">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="nacimiento" value="2000-01-01" min="1950-01-01" max="2020-07-24">
+                    <input type="text" name="age" id="age" value="" readonly>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label class="" for="id_usr">Usuario:</label>
+                    <input type="text" id="id_usr" name="id_usr">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="ccpaswd">Contraseña:</label>
+                    <input type="password" id="ccpaswd">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="ccpaswd2">Confirmar Contraseña:</label>
+                    <input type="password" id="ccpaswd2">
+                    <small>Error message</small>
+                </div>
+
+                <div>
+                    <p>¿Ha sufrido enfermedades contagiosas?</p>
+                    <div>
+                        <input type="radio" id="si" name="eRadio" value="si">
+                        <label> Si </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="eRadio" value="no" checked>
+                        <label> No </label>
+                    </div>
+                </div>
+
+                <div class="ocultar" id="id_divEnfermedades">
+                    <br>
+                    <div>
+                        <p>Seleccione las enfermedades contagiosas que ha sufrido.</p>
+                        <input type="checkbox" id="enf1" name="enf" value="Sarampión">
+                        <label for="enf1">Sarampión</label><br>
+                        <input type="checkbox" id="enf2" name="enf" value="Malaria">
+                        <label for="enf2">Malaria</label><br>
+                        <input type="checkbox" id="enf3" name="enf" value="Tifoidea">
+                        <label for="enf3">Fiebre tifoidea</label><br>
+                        <input type="checkbox" id="enf4" name="enf" value="Hepatitis">
+                        <label for="enf4"> Hepatitis</label><br>
+                        <input type="checkbox" id="enf5" name="enf" value="Varicela">
+                        <label for="enf5">Varicela</label><br>
+                        <input type="checkbox" id="enf6" name="enf" value="Gripe">
+                        <label for="enf6">Gripe</label><br>
+                    </div>
+                </div>
+
+                <div class="form-div">
+                    <button class="button" type="submit">Enviar Formulario</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="grilla">
+            <div class="title">
+                <h4 style="text-align: center;">Grilla</h4>
+            </div>
+            <div style="margin-left: 40%; margin-right: 40%; ">
+                <button class="button" type="button" id="visualizar">Visualizar</button>
+            </div>
+            <br><br>
+
+            <input id="myInput" type="text" placeholder="Search.." style="
+            margin-left: 37%;
+            margin-right: 40%;
+            margin-bottom: 5%;
+            border-color: white;
+            border-radius: 4px;
+            ">
+            
+            
+            
+            <div id="datosPersona" style="height: 386px;">
+
+            
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

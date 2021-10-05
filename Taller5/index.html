@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formulario</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="header">
+            <h1>Formulario</h1>
+        </div>
+        <div class="registro">
+            <div class="title">
+                <h2>Registro</h2>
+            </div>
+            <form name="form" class="form" id="formularioRegistro" onsubmit="return validarFormulario();">
+
+                <div class="form-div">
+                    <label for="idt">Número de identificación:</label>
+                    <input type="text" id="idt" name="idt">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="id_pais">Número de País:</label>
+                    <select id="id_pais" name="id_pais">
+                        <option selected disabled value value=""></option>
+                        <option value="170">170. Colombia </option>
+                        <option value="316">316. Guam </option>
+                        <option value="496">496. Mongolia</option>
+                        <option value="152">152. Chile </option>
+                        <option value="320">320. Guatemala </option>
+                        <option value="156">156. China </option>
+                        <option value="324">324. Guinea </option>
+                        <option value="500">500. Montserrat</option>
+                        <option value="328">328. Guyana</option>
+                        <option value="504">504. Marruecos</option>
+                        <option value="174">174. Comoras</option>
+                        <option value="312">312. Guadalupe </option>
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="av_direc">Dirección:</label><br>
+                    <select name="av_direc" id="av_direc" style="width: 100px;display: inline-grid;">
+                        <option selected disabled value value=""></option>
+                        <option value="calle">Cll</option>
+                        <option value="carrera">Cra</option>
+                        <option value="avenida">Av</option>
+                        <option value="anv">Anv</option>
+                        <option value="transversal">Trans</option>
+                    </select>
+                    <input type="text" id="direccion" name="direccion" style="width: 335px; display: inline-grid;">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label class="" for="id_usr">Usuario:</label>
+                    <input type="text" id="id_usr" name="id_usr">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="ccpaswd">Contraseña:</label>
+                    <input type="password" id="ccpaswd">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="ccpaswd2">Confirmar Contraseña:</label>
+                    <input type="password" id="ccpaswd2">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="telefono">Telefono:</label>
+                    <input type="text" id="telefono">
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <button class="button" type="submit">Enviar Formulario</button>
+                </div>
+
+            </form>
+            <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'taller/styles.css' %}">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Registro con Django</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="header">
+            <h1>Menu</h1>
+        </div>
+        <div class="registro">
+            <div class="title">
+                <h4>Registro</h4>
+            </div>
+            <form name="form1" class="form" id="formularioRegistro" action="." method="POST" onsubmit="return validarFormulario()">
+
+                {% csrf_token %}
+                <div class="form-div">
+                    {{ form.nombres.label_tag }} {{ form.nombres }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.apellidos.label_tag }} {{ form.apellidos }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.fechanacimiento.label_tag }} {{ form.fechanacimiento }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.tipodocumento.label_tag }} {{ form.tipodocumento }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.documento.label_tag }} {{ form.documento }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.lugarresidencia.label_tag }} {{ form.lugarresidencia }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.email.label_tag }} {{ form.email }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.telefono.label_tag }} {{ form.telefono }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.usuario.label_tag }} {{ form.usuario }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    {{ form.password.label_tag }} {{ form.password }}
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <input type='submit' value="Create">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+{% load static %}
+
+<script src="{% static 'taller/scripts.js' %}"></script>
+
+</body>
+
+</html>
